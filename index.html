@@ -253,7 +253,7 @@
                 <a href="#">Forgot password?</a>
             </div>
         </div>
-        <button type="button" class="login-button" id="loginButton">Sign In</button>
+        <button type="button" class="btn" id="submit">Sign In</button>
         <div class="signup-link">
             Don't have an account? <a href="#">Sign Up</a>
         </div>
@@ -283,7 +283,7 @@
     <script>
         // Demo login functionality
         document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById('loginButton').addEventListener('click', function () {
+            document.getElementById('submit').addEventListener('click', function () {
                 console.log("✅ Sign In button clicked!");  // Debugging log
                 const email = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
