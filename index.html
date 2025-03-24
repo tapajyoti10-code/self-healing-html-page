@@ -264,43 +264,49 @@
         </div>
     </div>
 
-   <!-- Success Message -->
-<div class="success-container" id="successContainer">
-    <div class="success-header">
-        <div class="user-info">
-            <div class="user-avatar">U</div>
-            <div class="user-name" id="displayUsername">Demo User</div>
+    <!-- Success Message -->
+    <div class="success-container" id="successContainer">
+        <div class="success-header">
+            <div class="user-info">
+                <div class="user-avatar">U</div>
+                <div class="user-name" id="displayUsername">Demo User</div>
+            </div>
+            <button class="logout-btn" id="logoutButton">Logout</button>
         </div>
-        <button class="logout-btn" id="logoutButton">Logout</button>
+        <div class="success-content">
+            <div class="success-icon">✅</div>
+            <h1 class="post-title">Logged In Successfully</h1>
+            <div class="success-description">Welcome to your account! You have successfully logged in.</div>
+        </div>
     </div>
-    <div class="success-content">
-        <div class="success-icon">✅</div>
-        <h1 class="post-title">Logged In Successfully</h1>
-        <div class="success-description">Welcome to your account! You have successfully logged in.</div>
-    </div>
-</div>
 
 
     <script>
         // Demo login functionality
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById('submit').addEventListener('click', function () {
-                console.log("✅ Sign In button clicked!");  // Debugging log
+                console.log("✅ Sign In button clicked!"); // Debugging log
                 const email = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
                 const errorMessage = document.getElementById('errorMessage');
 
-                // Check if credentials match demo credentials
-                if (email === 'user@example.com' && password === 'password123') {
+                // Check if username or password is incorrect
+                if (email !== 'user@example.com') {
+                    errorMessage.textContent = "Your username is invalid!";
+                    errorMessage.style.display = 'block';
+                    console.log("❌ Login failed: Invalid username.");
+                } else if (password !== 'password123') {
+                    errorMessage.textContent = "Your password is invalid!";
+                    errorMessage.style.display = 'block';
+                    console.log("❌ Login failed: Invalid password.");
+                } else {
                     document.getElementById('displayUsername').textContent = email.split('@')[0];
 
                     // Hide login form and show success message
                     document.getElementById('loginForm').style.display = 'none';
                     document.getElementById('successContainer').style.display = 'block';
+                    errorMessage.style.display = 'none'; // Hide error message on successful login
                     console.log("✅ Login Successful! UI updated.");
-                } else {
-                    errorMessage.style.display = 'block';
-                    console.log("❌ Login failed: Invalid credentials.");
                 }
             });
 
@@ -316,6 +322,7 @@
                 console.log("✅ Logged out.");
             });
         });
+
     </script>
 </body>
 
