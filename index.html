@@ -285,7 +285,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById('loginButton').addEventListener('click', function () {
                 console.log("✅ Sign In button clicked!");  // Debugging log
-                const email = document.getElementById('email-id').value;
+                const email = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
                 const errorMessage = document.getElementById('errorMessage');
 
@@ -309,7 +309,7 @@
                 document.getElementById('loginForm').style.display = 'block';
 
                 // Clear fields
-                document.getElementById('email-id').value = '';
+                document.getElementById('username').value = '';
                 document.getElementById('password').value = '';
                 document.getElementById('errorMessage').style.display = 'none';
                 console.log("✅ Logged out.");
