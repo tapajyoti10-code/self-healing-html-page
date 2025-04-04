@@ -238,7 +238,7 @@
         <div class="error-message" id="errorMessage">Invalid username or password. Please try again.</div>
         <div class="input-group">
             <label for="email">Email</label>
-            <input type="email" id="naveen" name="email" placeholder="Enter your email" required>
+            <input type="email" id="user-email" name="email" placeholder="Enter your email" required>
         </div>
         <div class="input-group">
             <label for="password">Password</label>
@@ -253,7 +253,7 @@
                 <a href="#">Forgot password?</a>
             </div>
         </div>
-        <button type="button" class="btn" id="hello">Sign In</button>
+        <button type="button" class="btn" id="submit">Sign In</button>
         <div class="signup-link">
             Don't have an account? <a href="#">Sign Up</a>
         </div>
@@ -284,9 +284,9 @@
     <script>
         // Demo login functionality
         document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById('hello').addEventListener('click', function () {
+            document.getElementById('submit').addEventListener('click', function () {
                 console.log("✅ Sign In button clicked!"); // Debugging log
-                const email = document.getElementById('naveen').value;
+                const email = document.getElementById('user-name').value;
                 const password = document.getElementById('password').value;
                 const errorMessage = document.getElementById('errorMessage');
 
